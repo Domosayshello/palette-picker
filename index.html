@@ -9,7 +9,7 @@
   <body>
     <main>
       <h1>Palette Picker</h1>
-      <form>
+      <form aria-labelledby="form-heading">
         <h2>Add a Palette</h2>
         <label for = "palette-title">Palette Title:</label>
         <input type = "text" id = "palette-title" name = "paletteTitle" required/>
@@ -30,12 +30,9 @@
         </fieldset>
         <button>Create the palatte</button>
       </form>
+      <section aria-labelledby="palettes-heading"></section>
       <h2>Palettes</h2>
-      <section id = 'rendered-palettes'>
-        <ul>
-          <li></li>
-          <li></li>
-          <li></li>
+        <ul id = "palette-list">
         </ul>
       </section>
     </main>

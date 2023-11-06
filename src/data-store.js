@@ -1,8 +1,5 @@
 import palettes from './palettes.json'
-
-const defaultPalettes = palettes;
-
-// console.log('Hello!', uuidv4());
+const deafultPalettes = [...palettes]
 
 const setLocalStorageKey = (key, value) => {
     localStorage.setItem(key, JSON.stringify(value));
@@ -18,7 +15,7 @@ const getLocalStorageValue = (key) => {
 };
 
 export const getPalettes = () => {
-    getLocalStorageValue('palettes') || [];
+    return getLocalStorageValue('palettes') || initPalettesIfEmpty();
 };
 
 export const setPalettes = (newPalettes) => {
@@ -26,7 +23,7 @@ export const setPalettes = (newPalettes) => {
 };
 
 export const initPalettesIfEmpty = () => {
-    if (!getPalettes().length) setPalettes(defaultPalettes);
+    setPalettes(defaultPalettes);
 };
 
 export const addPalette = (newPalette) => {
